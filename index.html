@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ことばのベクトル計算機 | Word2Vec 日本語</title>
+  <meta name="description" content="日本語 Word2Vec の A + B - C をブラウザだけで計算します。">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <p class="eyebrow">JAPANESE WORD VECTOR LAB</p>
+      <h1>ことばのベクトル計算機</h1>
+      <p class="lead">学習済みモデルをブラウザに保存し、<strong>王 ＋ 女 − 男</strong> のような意味の演算をローカルで探索します。</p>
+    </header>
+
+    <section class="panel model-panel" aria-label="モデル">
+      <div>
+        <p class="label">MODEL</p>
+        <p id="modelName" class="model-name">読み込み中…</p>
+        <p id="modelMeta" class="muted"></p>
+      </div>
+      <div class="model-actions">
+        <button id="cacheButton" type="button" class="secondary" disabled>モデルを端末に保存</button>
+        <span id="cacheStatus" class="muted small"></span>
+      </div>
+      <div class="bar-wrap hidden" id="downloadWrap">
+        <progress id="downloadProgress" max="100" value="0"></progress>
+        <span id="downloadText" class="small"></span>
+      </div>
+    </section>
+
+    <section class="panel calculator" aria-label="ベクトル演算">
+      <form id="formulaForm">
+        <div class="formula">
+          <label>
+            <span>A</span>
+            <input id="wordA" list="wordHints" autocomplete="off" value="王" required>
+          </label>
+          <b>＋</b>
+          <label>
+            <span>B</span>
+            <input id="wordB" list="wordHints" autocomplete="off" value="女" required>
+          </label>
+          <b>−</b>
+          <label>
+            <span>C</span>
+            <input id="wordC" list="wordHints" autocomplete="off" value="男" required>
+          </label>
+        </div>
+        <datalist id="wordHints"></datalist>
+        <div class="actions">
+          <button id="searchButton" type="submit" disabled>近いことばを探す</button>
+          <label class="topn">表示件数
+            <select id="topN">
+              <option>5</option>
+              <option selected>10</option>
+              <option>20</option>
+            </select>
+          </label>
+        </div>
+      </form>
+      <nav class="examples" aria-label="例題">
+        <span>例：</span>
+        <button data-formula="王|女|男">王＋女−男</button>
+        <button data-formula="父|女|男">父＋女−男</button>
+        <button data-formula="東京|フランス|日本">東京＋フランス−日本</button>
+      </nav>
+    </section>
+
+    <section class="panel results-panel" aria-live="polite">
+      <div class="results-head">
+        <div>
+          <p class="label">RESULTS</p>
+          <h2 id="resultTitle">計算結果</h2>
+        </div>
+        <p id="elapsed" class="muted"></p>
+      </div>
+      <div class="bar-wrap hidden" id="searchWrap">
+        <progress id="searchProgress" max="100" value="0"></progress>
+        <span id="searchText" class="small">検索中…</span>
+      </div>
+      <p id="message" class="message">上の式で計算してください。</p>
+      <ol id="results" class="results hidden"></ol>
+    </section>
+
+    <footer>
+      <p>検索は Web Worker 内で実行され、語彙・ベクトルは外部APIへ送信されません。</p>
+    </footer>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

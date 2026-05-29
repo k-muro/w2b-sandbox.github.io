@@ -1,0 +1,60 @@
+* { box-sizing: border-box; }
+:root {
+  --bg: #f5f2ea;
+  --paper: #fffdf7;
+  --ink: #20201d;
+  --muted: #69665e;
+  --line: #ddd6c8;
+  --accent: #1b6248;
+  --accent-weak: #e4efe9;
+  --shadow: 0 14px 38px rgba(46, 39, 25, .07);
+}
+html { font-family: "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif; color: var(--ink); background: var(--bg); }
+body { margin: 0; }
+.shell { width: min(900px, calc(100% - 32px)); margin: 0 auto; padding: 56px 0 40px; }
+.hero { margin-bottom: 30px; }
+.eyebrow, .label { color: var(--accent); font-size: .72rem; font-weight: 700; letter-spacing: .2em; margin: 0 0 10px; }
+h1 { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: clamp(2.3rem, 6vw, 3.8rem); font-weight: 600; letter-spacing: .04em; margin: 0 0 14px; }
+.lead { color: var(--muted); line-height: 1.9; margin: 0; }
+.panel { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 24px; margin-bottom: 16px; box-shadow: var(--shadow); }
+.model-panel { display: grid; grid-template-columns: 1fr auto; gap: 14px 24px; align-items: center; }
+.model-name { font-size: 1.07rem; font-weight: 700; margin: 0 0 6px; }
+.muted { color: var(--muted); margin: 0; }
+.small { font-size: .84rem; }
+.model-actions { display: flex; flex-direction: column; gap: 8px; align-items: end; }
+.bar-wrap { grid-column: 1 / -1; display: flex; gap: 14px; align-items: center; }
+progress { width: 100%; accent-color: var(--accent); height: 10px; }
+.formula { display: flex; align-items: end; justify-content: center; gap: 16px; margin: 10px 0 28px; }
+.formula label { display: flex; flex-direction: column; gap: 7px; color: var(--muted); font-size: .8rem; font-weight: 700; }
+.formula b { font-size: 2rem; font-weight: 400; padding-bottom: 9px; color: var(--accent); }
+input { width: 190px; border: 1px solid var(--line); background: #fff; border-radius: 12px; padding: 13px 14px; font-size: 1.18rem; color: var(--ink); }
+input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.actions { display: flex; justify-content: center; gap: 20px; align-items: center; }
+button { border: none; border-radius: 999px; background: var(--accent); color: #fff; cursor: pointer; padding: 13px 25px; font-weight: 700; font-size: .96rem; }
+button:disabled { opacity: .42; cursor: not-allowed; }
+button.secondary { background: var(--accent-weak); color: var(--accent); }
+.topn { color: var(--muted); font-size: .9rem; display: flex; gap: 8px; align-items: center; }
+select { padding: 8px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+.examples { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; color: var(--muted); font-size: .9rem; }
+.examples button { padding: 7px 12px; background: var(--accent-weak); color: var(--accent); font-size: .84rem; }
+.results-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 16px; }
+.results-head h2 { font-size: 1.25rem; margin: 0; }
+.message { color: var(--muted); padding: 18px 0 8px; margin: 0; }
+.results { list-style: none; counter-reset: rank; padding: 0; margin: 0; }
+.results li { counter-increment: rank; display: grid; grid-template-columns: 42px 1fr 100px; gap: 12px; align-items: center; padding: 13px 0; border-top: 1px solid var(--line); }
+.results li::before { content: counter(rank, decimal-leading-zero); font-size: .85rem; color: var(--muted); }
+.word { font-size: 1.05rem; font-weight: 600; }
+.score { font-variant-numeric: tabular-nums; text-align: right; color: var(--accent); }
+.scorebar { height: 5px; background: var(--accent-weak); border-radius: 999px; margin-top: 7px; overflow: hidden; }
+.scorebar i { display: block; height: 100%; background: var(--accent); }
+.hidden { display: none !important; }
+footer { color: var(--muted); text-align: center; font-size: .82rem; line-height: 1.8; margin-top: 30px; }
+@media (max-width: 680px) {
+  .shell { padding-top: 34px; }
+  .model-panel { grid-template-columns: 1fr; }
+  .model-actions { align-items: start; }
+  .formula { gap: 8px; }
+  input { width: 100%; min-width: 0; font-size: 1rem; }
+  .formula label { flex: 1; }
+  .formula b { font-size: 1.5rem; }
+}
