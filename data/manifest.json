@@ -1,20 +1,90 @@
 {
   "formatVersion": 1,
-  "name": "同梱デモモデル（本番は変換後の日本語モデルに差し替え）",
-  "vocabSize": 15,
-  "dim": 6,
+  "name": "chiVe v1.1 mc90 aunit（日本語実モデル）",
+  "vocabSize": 189775,
+  "dim": 300,
   "dtype": "float32",
   "storage": "全語彙 / 正規化 float32 / ブラウザ内検索",
   "wordsFile": "words.txt",
-  "wordsBytes": 90,
-  "vectorBytes": 360,
+  "wordsBytes": 1790114,
+  "vectorBytes": 227730000,
   "shards": [
     {
       "file": "vectors-00000.f32",
       "start": 0,
-      "count": 15,
-      "bytes": 360,
-      "sha256": "297afe4eee1cbdc133fc06c8c474fc018a31655d0a73b3b64d6a11fa86f6551e"
+      "count": 17476,
+      "bytes": 20971200,
+      "sha256": "3ba09af2a7d4b3f7558464f546fa0f4ca4558fab23e446dfde810cc88ee7b99e"
+    },
+    {
+      "file": "vectors-00001.f32",
+      "start": 17476,
+      "count": 17476,
+      "bytes": 20971200,
+      "sha256": "7e09583ad58dff5bda26ae8f08d70b026f3c8c3fa1c3e794a59615bec67f48ac"
+    },
+    {
+      "file": "vectors-00002.f32",
+      "start": 34952,
+      "count": 17476,
+      "bytes": 20971200,
+      "sha256": "88085a3aa41531a0bce8b148c532a845e129cd96222c8dc3d449f15f9cfd757d"
+    },
+    {
+      "file": "vectors-00003.f32",
+      "start": 52428,
+      "count": 17476,
+      "bytes": 20971200,
+      "sha256": "9d3b74b640572dfe5f881f2e33f4819c4d972c9157792d64772c7f506311e4fd"
+    },
+    {
+      "file": "vectors-00004.f32",
+      "start": 69904,
+      "count": 17476,
+      "bytes": 20971200,
+      "sha256": "cad07387393be8ac4130fc976f03a1ca4e9dc121b7c5c64348b4888c765c2453"
+    },
+    {
+      "file": "vectors-00005.f32",
+      "start": 87380,
+      "count": 17476,
+      "bytes": 20971200,
+      "sha256": "5f92e530e5c1b24f8ccbbe3725d40bcca14ecb8425566672d9d3c49afa5b8a84"
+    },
+    {
+      "file": "vectors-00006.f32",
+      "start": 104856,
+      "count": 17476,
+      "bytes": 20971200,
+      "sha256": "2f5e30b637e2ba06462cc2ce6be3ce2ff9d4a9821c9b96476ef7a7b5e9d5cb85"
+    },
+    {
+      "file": "vectors-00007.f32",
+      "start": 122332,
+      "count": 17476,
+      "bytes": 20971200,
+      "sha256": "4a8945cd3f820c6b8a11adfb06327d2bef20cc31c77bb4a52f2b98016c0722f7"
+    },
+    {
+      "file": "vectors-00008.f32",
+      "start": 139808,
+      "count": 17476,
+      "bytes": 20971200,
+      "sha256": "26296dea35ff78e86fcc6ab10e9abba153a4f68891b675c3d0410d27f371bc37"
+    },
+    {
+      "file": "vectors-00009.f32",
+      "start": 157284,
+      "count": 17476,
+      "bytes": 20971200,
+      "sha256": "d5c3683ad2ddde87d45aeb712805c74712b2215920d30de8e22569dc1deeea15"
+    },
+    {
+      "file": "vectors-00010.f32",
+      "start": 174760,
+      "count": 15015,
+      "bytes": 18018000,
+      "sha256": "6329bc10d14a698eb6f2144efd2058f42a0ec8b72b2770c472081c0370f2f7c9"
     }
   ]
 }
